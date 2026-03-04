@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name= "viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Piedra, Papel o Tijera</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    </head>
+
+    <body>
+        <div class="contenedor">
+            <h1>¡Piedra, Papel o Tijera!</h1>
+            <p>Elige tu movimiento:</p>
+            <form action="/jugar" method="POST">
+            <button type="submit" name="eleccion" value="piedra">
+                <img src="{{ url_for('static', filename='imagenes/piedra.png') }}" alt="Piedra"><br>
+                Piedra
+            </button>
+            
+            <button type="submit" name="eleccion" value="papel">
+                <img src="{{ url_for('static', filename='imagenes/papel.png') }}" alt="Papel"><br>
+                Papel
+            </button>
+            
+            <button type="submit" name="eleccion" value="tijera">
+                <img src="{{ url_for('static', filename='imagenes/tijera.png') }}" alt="Tijera"><br>
+                Tijera
+            </button>
+        </form>
+        <hr>
+
+        {% if resultado %}
+        <div class="resultado-seccion">
+            <h2>{{ resultado }}</h2>
+            <div class="duelo">
+                <div>
+                    <p>Tú elegiste:</p>
+                    <img src="{{ url_for('static', filename='imagenes/' + tu + '.png') }}" class="mini">
+                </div>
+                <span>VS</span>
+                <div>
+                    <p>Computadora:</p>
+                    <img src="{{ url_for('static', filename='imagenes/' + pc + '.png') }}" class="mini">
+                </div>
+            </div>
+            <br>
+            <a href="/" class="boton-reiniciar">Jugar de nuevo</a>
+        </div>
+        {% endif %}
+    </div>
+        </div>
+    </body>
+</html>

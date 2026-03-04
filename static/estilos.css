@@ -1,0 +1,86 @@
+/* Configuración general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2c3e50; /* Un azul oscuro elegante */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contenedor {
+    background-color: #34495e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Estilo de los botones de juego */
+form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #ecf0f1;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 120px;
+}
+
+button:hover {
+    transform: translateY(-10px);
+    border-color: #3498db;
+    background-color: white;
+}
+
+button img {
+    width: 80px; /* Ajusta esto según el tamaño de tus imágenes */
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Sección de resultados */
+.resultado-seccion {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2ecc71; /* Verde para dar contraste */
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease;
+}
+
+.duelo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.mini {
+    width: 60px;
+    height: 60px;
+}
+
+.boton-reiniciar {
+    display: inline-block;
+    margin-top: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+/* Animación simple */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
